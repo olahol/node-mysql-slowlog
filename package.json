@@ -1,7 +1,7 @@
 {
   "name": "mysql-slowlog"
   , "description": "Application level slow log for mysql connections. Good for debugging slow queries when you haven't turned on or have access to the database slow log."
-  , "version": "0.1.0"
+  , "version": "0.1.1"
   , "author": "Ola Holmström <olaholmstrom+github@gmail.com>"
   , "keywords": ["mysql", "log", "slow", "slowlog"]
   , "main": "./index.js"

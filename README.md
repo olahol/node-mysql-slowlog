@@ -24,3 +24,9 @@ log.on("slow", function (time, query) {
   console.log("query %s took %dms", query, time);
 });
 ```
+
+## Changelog
+
+### v0.1.1
+
+* Fix bug when there is no stream returned by query.

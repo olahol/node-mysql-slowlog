@@ -43,7 +43,8 @@ module.exports = function (conn, opts) {
 
       return old.apply(this, args); // Execute query.
     } else { // Assume streaming when there is no callback.
-      return old.apply(this, args).on("end", slow);
+      var query = old.apply(this, args);
+      if (query) { return query.on("end", slow) }; // Fix bug when no stream is returned.
     }
   };
 
