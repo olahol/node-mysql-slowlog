@@ -27,6 +27,11 @@ log.on("slow", function (time, query) {
 
 ## Changelog
 
+### v0.1.2
+
+* Added error stack from where the query was called. This can be used to locate
+  where in your code the query was called.
+
 ### v0.1.1
 
 * Fix bug when there is no stream returned by query.

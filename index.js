@@ -18,6 +18,7 @@ module.exports = function (conn, opts) {
   // New query method.
   conn.query = function () {
     var args = toArray(arguments)
+      , err = new Error() // Error stack from where the query was called.
       , then = new Date();
 
     var slow = function () {
@@ -27,7 +28,7 @@ module.exports = function (conn, opts) {
       if (time > opts.time) {
         emitter.emit("slow", time, args.filter(function (a) {
           return typeof a !== "function"; // Return all arguments that arent functions.
-        }));
+        }), err);
       }
     };
 
